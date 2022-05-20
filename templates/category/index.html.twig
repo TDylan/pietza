@@ -1,7 +1,12 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     {% for pizza in pizzas %}
-        {{ pizza.name }}
-        <button class="button" onclick="window.location.href='{{path('app_detail',{id:pizza.id})}}'">Bewerken</button>
+    <div class="card" style="width: 18rem;">
+				<img class="card-img-top" src="{{pizza.image}}" alt="Pizza">
+				<div class="card-body">
+					<h5 class="card-title">{{ pizza.name }}</h5>
+					<button class="button" onclick="window.location.href = '{{path("app_detail", {id: pizza.id})}}'">Bestel</button>
+				</div>
+			</div>
     {% endfor %}
 {% endblock %}

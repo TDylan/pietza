@@ -1,9 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <img src="{{ asset('/img/banner.jpg') }}" style="width: 100vw">
-    {% for category in categories %}
-    <div>{{ category.name }}</div>
 
-    {% endfor %}
+
+    
+	<section class="container">
+		{% for category in categories %}
+			<div class="card" style="width: 18rem;">
+				<img class="card-img-top" src="{{category.image}}" alt="Pizza">
+				<div class="card-body">
+					<h5 class="card-title">{{ category.name }}</h5>
+					<p class="card-text">{{ category.description }}</p>
+					<button class="button" onclick="window.location.href = '{{path("app_category", {id: category.id})}}'">Naar pizza {{category.name}}</button>
+				</div>
+			</div>
+		{% endfor %}
+	</section>
 {% endblock %}
