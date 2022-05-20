@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 20 mei 2022 om 12:29
+-- Gegenereerd op: 20 mei 2022 om 14:47
 -- Serverversie: 10.4.22-MariaDB
 -- PHP-versie: 7.4.27
 
@@ -61,6 +61,18 @@ CREATE TABLE `order` (
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `order`
+--
+
+INSERT INTO `order` (`id`, `size_id`, `pizza_id`, `fname`, `lname`, `adress`, `city`, `zip`, `status`) VALUES
+(2, 2, 6, 'Dylan', 'Toonen', 'Jopistraat 25', 'Den haag', '1234AB', 'laden'),
+(3, 3, 6, 'Pieter', 'Parker', 'Sumolaan 22', 'Delft', '1234AB', 'laden'),
+(4, 3, 3, 'Gerard', 'Joling', 'Oehestraat 67', 'Rijswijk', '1425JD', 'Word bereid'),
+(5, 3, 1, 'Rick', 'Van Zon', 'Kiwilaan 89', 'Monster', '2983BH', 'Word bereid'),
+(7, 1, 5, 'Keren', 'Hogeboom', 'Appelstraat 4', 'Rijswijk', '2953GB', 'Word bereid'),
+(14, 2, 6, 'Johan', 'Derksen', 'Koperlaan 6', 'Delft', '3476JK', 'Word bereid');
+
 -- --------------------------------------------------------
 
 --
@@ -97,6 +109,15 @@ CREATE TABLE `size` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `size`
+--
+
+INSERT INTO `size` (`id`, `name`) VALUES
+(1, 'Small'),
+(2, 'Medium'),
+(3, 'Calzone');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -143,7 +164,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT voor een tabel `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT voor een tabel `pizza`
@@ -155,7 +176,7 @@ ALTER TABLE `pizza`
 -- AUTO_INCREMENT voor een tabel `size`
 --
 ALTER TABLE `size`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Beperkingen voor geëxporteerde tabellen

@@ -1,8 +1,15 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-{% for order in orders %}
-    {{ order.fname }}
-    {{order.status}}
-    {{order.pizza.name}}
-{% endfor %}
+	<h2>Bestellingen:</h2>
+	{% for order in orders %}
+
+		<ul><li>Naam:
+			{{ order.fname }}<br>
+			Status:
+			{{order.status}}<br>
+			Pizza:
+			{{order.pizza.name}}<br>
+			Size:
+			{{order.size.name}}</li></ul>
+	{% endfor %}
 {% endblock %}

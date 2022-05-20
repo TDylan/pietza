@@ -20,20 +20,20 @@ class OrderController extends AbstractController
     public function index(Request $request, ManagerRegistry $doctrine, SessionInterface $session, PizzaRepository $pizzaRepository): Response
     {
         $manager = $doctrine->getManager();
-        dd($session->get('pizza'));
         $pizza = $pizzaRepository->find($session->get('pizza'));
-        
+// dd($pizza);        
         $Order = new Order();
         $form = $this -> createForm(OrderType::class,$Order);
         $form->handleRequest($request);
         if ($form -> isSubmitted() && $form -> isValid()){
             $Order->setPizza($pizza);
-            $Order->setStatus('laden');
-            $this->addFlash('succes', 'Je bestelling is geplaatst!');
+            $Order->setStatus('Word bereid');
+            $this->addFlash('success', 'Je bestelling is geplaatst!');
             $manager->persist($Order);
             $manager->flush();
+            return $this->redirectToRoute('app_home');
+            // return $this->renderForm('home/index.html.twig');
         }
-
         return $this->renderForm('order/index.html.twig', [
             'form' => $form,
         ]);

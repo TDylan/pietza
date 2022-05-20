@@ -16,9 +16,7 @@ class OrderType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('fname', TextType::class,[
-            'label'=> 'Voornaam'
-            ])
+            ->add('fname', TextType::class, ['label'=> 'Voornaam'])
             ->add('lname', TextType::class,[
             'label'=> 'Achternaam'
             ])

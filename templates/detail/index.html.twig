@@ -4,7 +4,8 @@
 		<img class="card-img-top" src="{{pizza.image}}" alt="Pizza">
 		<div class="card-body">
 			<h5 class="card-title">{{pizza.name}}</h5>
-			<button class="button" onclick="window.location.href = '{{path("app_order")}}'">Bestel</button>
+			{{ form(form) }}
+			{# <button class="button" onclick="window.location.href = '{{path("app_order")}}'">Bestel</button> #}
 		</div>
 	</div>
 {% endblock %}
